@@ -94,3 +94,5 @@ PyCFunction PyCFunctionFast_Cast(_PyCFunctionFast func) { return (PyCFunction) f
 PyCFunction PyCFunctionFastWithKeywords_Cast(_PyCFunctionFastWithKeywords func) { return (PyCFunction) func; }
 
 PyCFunction PyCMethod_Cast(PyCMethod func) { return (PyCFunction) func; }
+
+
