@@ -25,7 +25,7 @@ package_targets.append(
     .binaryTarget(
         name: "Python",
         url: "https://github.com/PythonSwiftLink/PythonAppleSupport/archive/refs/tags/3.10-iOS.b6.zip",
-        checksum: "a5e256b619be86b10b93118e6a277f3a9e98dc7eaf57d3059c56fdbd074a0314"
+        checksum: "3379ebd2bcebf478f05a3aae9fa2109a3b445992bafd15838cdc9ec8d3532fcd"
     )
 )
 
