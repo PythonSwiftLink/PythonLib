@@ -6,8 +6,9 @@ let framework_path = "Frameworks310"
 var package_targets = [Target]()
 package_targets.append(
     .target(
-        name: "PythonLib",
-        dependencies: ["Python"],
+        name: "PythonLib-macOS",
+        dependencies: ["Python-macOS"],
+        path: "Sources/PythonLib",
         linkerSettings: [
             .linkedLibrary("ncurses"),
             .linkedLibrary("ffi"),
@@ -23,17 +24,18 @@ package_targets.append(
 
 package_targets.append(
     .binaryTarget(
-        name: "Python",
+        name: "Python-macOS",
         url: "https://github.com/PythonSwiftLink/PythonAppleSupport/archive/refs/tags/3.10-macOS.b6.zip",
-        checksum: "a5e256b619be86b10b93118e6a277f3a9e98dc7eaf57d3059c56fdbd074a0314"
+        checksum: "4b05607f5c045aa05f2ce09c22d5e52473e1474e4751fed334b2eaa738adfb53"
     )
 )
 let package = Package(
     name: "PythonLib",
+    platforms: [.macOS(.v11)],
     products: [
         .library(
             name: "PythonLib",
-            targets: ["PythonLib"]
+            targets: ["PythonLib-macOS"]
         ),
     ],
     targets: package_targets
