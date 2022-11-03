@@ -26,7 +26,7 @@ package_targets.append(
         checksum: "a5e256b619be86b10b93118e6a277f3a9e98dc7eaf57d3059c56fdbd074a0314"
     )
 )
-#elseif os(macOS)
+#elseif os(iOS)
 package_targets.append(
     .binaryTarget(
         name: "Python",
