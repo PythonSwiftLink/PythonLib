@@ -17,7 +17,9 @@ package_targets.append(
             
         ]
     )
+    
 )
+
 #if os(iOS)
 package_targets.append(
     .binaryTarget(
@@ -45,6 +47,7 @@ let package = Package(
     ],
     targets: package_targets
 )
+
 
 
 //let package = Package(
