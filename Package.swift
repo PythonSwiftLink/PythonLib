@@ -20,15 +20,7 @@ package_targets.append(
     
 )
 
-#if os(iOS)
-package_targets.append(
-    .binaryTarget(
-        name: "Python",
-        url: "https://github.com/PythonSwiftLink/PythonAppleSupport/archive/refs/tags/3.10-iOS.b6.zip",
-        checksum: "a5e256b619be86b10b93118e6a277f3a9e98dc7eaf57d3059c56fdbd074a0314"
-    )
-)
-#elseif os(iOS)
+
 package_targets.append(
     .binaryTarget(
         name: "Python",
@@ -36,7 +28,6 @@ package_targets.append(
         checksum: "a5e256b619be86b10b93118e6a277f3a9e98dc7eaf57d3059c56fdbd074a0314"
     )
 )
-#endif
 let package = Package(
     name: "PythonLib",
     products: [
