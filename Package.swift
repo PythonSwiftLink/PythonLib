@@ -26,7 +26,7 @@ package_targets.append(
     .binaryTarget(
         name: "Python-macOS",
         url: "https://github.com/PythonSwiftLink/PythonAppleSupport/archive/refs/tags/3.10-macOS.b6.zip",
-        checksum: "4b05607f5c045aa05f2ce09c22d5e52473e1474e4751fed334b2eaa738adfb53"
+        checksum: "a5e256b619be86b10b93118e6a277f3a9e98dc7eaf57d3059c56fdbd074a0314"
     )
 )
 let package = Package(
