@@ -28,11 +28,16 @@ bool PythonFloat_Check(PyObject *o);
 bool PythonBool_Check(PyObject *o);
 bool PythonByteArray_Check(PyObject *o);
 bool PythonBytes_Check(PyObject *o);
+
+bool PythonObject_TypeCheck(PyObject *o, PyTypeObject *type);
+
 PyObject** PythonSequence_Fast_ITEMS(PyObject *o);
 PyObject* PythonSequence_Fast_GET_ITEM(PyObject *o, Py_ssize_t i);
 Py_ssize_t PythonSequence_Fast_GET_SIZE(PyObject *o);
 Py_buffer *PythonMemoryView_GET_BUFFER(PyObject *mview);
 
+
+uint Python_TPFLAGS_DEFAULT;
 
 void* PythonUnicode_DATA(PyObject *o);
 unsigned int PythonUnicode_KIND(PyObject *o);
@@ -64,6 +69,8 @@ PyModuleDef_Base PythonModuleDef_HEAD_INIT;
 //PyVarObject PythonVarObject_HEAD_INIT;
 PyVarObject PythonObject_Head();
 
+PyObject* Py_Module_Create(PyModuleDef *def );
+
 PyTypeObject NewPyType();
 static PyObject* Custom_new(PyTypeObject *type);
 
@@ -81,4 +88,15 @@ PyCFunction PyCFunctionFast_Cast(_PyCFunctionFast func);
 PyCFunction PyCFunctionFastWithKeywords_Cast(_PyCFunctionFastWithKeywords func);
 
 PyCFunction PyCMethod_Cast(PyCMethod func);
+
+
+
+//int _PyArg_VaParseTupleAndKeywords(PyObject *args, PyObject *kw,
+//                                   const char *format, char **keywords, va_list vargs );
+//
+
+long _PyTuple_GET_SIZE(PyObject *p);
+
+long _PyDict_GET_SIZE(PyObject *p);
+
 #endif /* PythonLib_h */

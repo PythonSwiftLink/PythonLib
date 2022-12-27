@@ -17,7 +17,7 @@ bool PythonFloat_Check(PyObject *o) { return PyFloat_Check(o) == 1; }
 bool PythonBool_Check(PyObject *o){ return PyBool_Check(o) == 1; }
 bool PythonByteArray_Check(PyObject *o) { return PyByteArray_Check(o) == 1; }
 bool PythonBytes_Check(PyObject *o) { return PyBytes_Check(o) == 1; }
-
+bool PythonObject_TypeCheck(PyObject *o, PyTypeObject *type) { return PyObject_TypeCheck(o, type) == 1; }
 
 PyObject** PythonSequence_Fast_ITEMS(PyObject *o) { return PySequence_Fast_ITEMS(o); }
 PyObject* PythonSequence_Fast_GET_ITEM(PyObject *o, Py_ssize_t i) { return PySequence_Fast_GET_ITEM(o, i); }
@@ -25,6 +25,8 @@ Py_ssize_t PythonSequence_Fast_GET_SIZE(PyObject *o) { return PySequence_Fast_GE
 
 PyObject* PythonDelta_FromDSU(int days, int seconds, int useconds) { return PyDelta_FromDSU(days, seconds, useconds);}
 Py_buffer *PythonMemoryView_GET_BUFFER(PyObject *mview) { return PyMemoryView_GET_BUFFER(mview);}
+
+uint Python_TPFLAGS_DEFAULT = Py_TPFLAGS_DEFAULT;
 
 void* PythonUnicode_DATA(PyObject *o) { return PyUnicode_DATA(o);}
 unsigned int PythonUnicode_KIND(PyObject *o) {return  PyUnicode_KIND(o);}
@@ -47,7 +49,7 @@ PyModuleDef_Base PythonModuleDef_HEAD_INIT = PyModuleDef_HEAD_INIT;
 
 PyVarObject PythonObject_Head() {PyObject_HEAD; }
 
-
+PyObject* Py_Module_Create(PyModuleDef *def ) { PyModule_Create(def); }
 
 long PySwiftObject_dict_offset = offsetof(PySwiftObject, dict);
 long PySwiftObject_size = sizeof(PySwiftObject);
@@ -94,5 +96,13 @@ PyCFunction PyCFunctionFast_Cast(_PyCFunctionFast func) { return (PyCFunction) f
 PyCFunction PyCFunctionFastWithKeywords_Cast(_PyCFunctionFastWithKeywords func) { return (PyCFunction) func; }
 
 PyCFunction PyCMethod_Cast(PyCMethod func) { return (PyCFunction) func; }
+
+
+//int _PyArg_VaParseTupleAndKeywords(PyObject *args, PyObject *kw,
+//                                   const char *format, char **keywords, va_list vargs ) {PyArg_VaParseTupleAndKeywords(args, kw, format, keywords, vargs);};
+
+long _PyTuple_GET_SIZE(PyObject *p) {return PyTuple_GET_SIZE(p);}
+
+long _PyDict_GET_SIZE(PyObject *p) {return PyDict_GET_SIZE(p);}
 
 
