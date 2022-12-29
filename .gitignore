@@ -4,3 +4,4 @@
 .swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
 .DS_Store
 .python-stdlib
+.python-stdlib/*
