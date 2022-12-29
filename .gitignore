@@ -3,5 +3,6 @@
 .swiftpm/xcode/xcuserdata/musicmaker.xcuserdatad/xcschemes/xcschememanagement.plist
 .swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
 .DS_Store
-.python-stdlib
-.python-stdlib/*
+python-stdlib
+Python-3.10-macOS-support.b6
+Python.zip
